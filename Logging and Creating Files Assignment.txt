@@ -1,0 +1,34 @@
+# Anthony Murdock
+# August 6, 2022
+# Creating a Filing System
+
+
+import os
+
+# Path for creating file in
+print("Please provide file path: ")
+path = input()
+
+print("Please enter filename (without .txt): ")
+filename = input()
+filename += '.txt'
+
+isdir = os.path.isdir(path)
+
+if isdir:
+    print("Please enter your name: ")
+    name = input()
+
+    print("Please enter your address: ")
+    address = input()
+
+    print("Please enter your phone number: ")
+    phonenumber = input()
+    
+    # filename with path
+    filename = path + "\\" + filename
+    
+    with open(filename, 'w') as fileHandle:
+        fileHandle.write(name + ', ' + address + ', ' + phonenumber)
+else:
+    print("Invalid Directory!")
